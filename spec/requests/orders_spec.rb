@@ -19,4 +19,19 @@ RSpec.describe "/orders", type: :request do
       expect(response).to be_successful
     end
   end
+
+  describe "PATCH /update" do
+    let!(:order) { Order.create }
+    
+    it "updates the requested order" do
+      patch order_url(order)
+
+      expect(order.reload.complete).to be(true)
+    end
+
+    it "redirects to the order" do
+      patch order_url(order)
+      expect(response).to redirect_to(orders_url)
+    end
+  end
 end
