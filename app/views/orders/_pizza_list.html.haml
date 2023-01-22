@@ -1,0 +1,8 @@
+%p                              
+  Items:                        
+- pizza_list.each do |pizza|  
+  %ul.square                    
+    %li                                      
+      = "#{pizza.pizza_type} (#{pizza.pizza_size})"
+
+      = render partial: 'ingredient_list', locals: { pizza_ingredients: pizza.pizza_ingredients } 

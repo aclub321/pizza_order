@@ -1,5 +1,7 @@
 class Pizza < ApplicationRecord
   belongs_to :order
+  has_many :pizza_ingredients
+  has_many :ingredients, through: :pizza_ingredients
 
   enum :pizza_type, {
     Margherita: 0,

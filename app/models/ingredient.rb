@@ -1,6 +1,9 @@
 class Ingredient < ApplicationRecord
-  enum :state, {
-    removed: 0,
-    add: 1
+  has_many :pizzas, through: :pizza_ingredients
+
+  enum :name, {
+    Onions: 0,
+    Cheese: 1,
+    Olives: 2
   }
 end

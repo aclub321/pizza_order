@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
-  enum :discount, {
+  has_many :pizzas
+
+  enum :discount_code, {
     SAVES: 0
   }
 

@@ -1,0 +1,9 @@
+- if pizza_ingredients.added.any?
+  %ul.circle                    
+    %li                                      
+      = display_added_ingredients(pizza_ingredients.added)
+
+- if pizza_ingredients.removed.any?
+  %ul.circle                    
+    %li                                      
+      = display_removed_ingredients(pizza_ingredients.removed)

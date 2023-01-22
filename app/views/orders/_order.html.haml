@@ -15,7 +15,6 @@
 
     = button_to 'Complete', order_path(order), method: :patch
   .column
-    %p
-      Items:
-    %ul.square 
-      %li Tonno (Large)  
+    = render partial: 'pizza_list', locals: { pizza_list: order.pizzas }
+  
+          
