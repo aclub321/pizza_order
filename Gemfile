@@ -64,6 +64,8 @@ group :development do
   # gem "spring"
   
   gem 'rubocop', '~> 1.43', require: false
+
+  gem "rspec-rails"
 end
 
 group :test do
