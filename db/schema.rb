@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_22_121148) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_22_122215) do
   create_table "ingredients", force: :cascade do |t|
     t.integer "name", limit: 1, null: false
-    t.integer "state", limit: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +22,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_121148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "complete", default: false, null: false
+  end
+
+  create_table "pizza_ingredients", force: :cascade do |t|
+    t.integer "state", limit: 1, null: false
+    t.integer "pizza_id", null: false
+    t.integer "ingredient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_pizza_ingredients_on_ingredient_id"
+    t.index ["pizza_id"], name: "index_pizza_ingredients_on_pizza_id"
   end
 
   create_table "pizzas", force: :cascade do |t|
@@ -42,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_121148) do
     t.index ["order_id"], name: "index_promotion_codes_on_order_id"
   end
 
+  add_foreign_key "pizza_ingredients", "ingredients"
+  add_foreign_key "pizza_ingredients", "pizzas"
   add_foreign_key "pizzas", "orders"
   add_foreign_key "promotion_codes", "orders"
 end
