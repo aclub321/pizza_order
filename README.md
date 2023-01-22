@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
-
-* System dependencies
-
-* Configuration
+  
+  2.7.3
 
 * Database creation
 
+  Run following command to create database
+
+  ```
+  rake db:create db:schema:load
+  ```
+
 * Database initialization
+  
+  Run following command to seed database
+  
+  ```
+  rake db:seed
+  ```
+
+* Run application
+  
+  Run following command in terminal
+  ```
+  rails s
+  ```
+  
+  Then open **localhost:3000** in browser to view **Orders** page
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  
+  Run following command in terminal to run all tests
+  
+  ```
+  rspec
+  ```
