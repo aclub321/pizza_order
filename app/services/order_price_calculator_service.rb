@@ -79,8 +79,6 @@ class OrderPriceCalculatorService
 
     price = 0
     
-    puts no_of_pizzas_to_deduct
-
     no_of_pizzas_to_deduct.times do
       price += calculate_pizza_price(pizza_type, pizza_size)    
     end

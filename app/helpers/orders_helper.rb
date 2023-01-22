@@ -12,7 +12,7 @@ module OrdersHelper
   end
 
   def construct_ingredients_string(pizza_ingredients)
-    result = ""
+    result = ''
 
     pizza_ingredients.each do |pizza_ingredient|
       result += "#{pizza_ingredient.ingredient.name}, "
@@ -26,7 +26,7 @@ module OrdersHelper
   def print_promotion_codes(promotion_codes)
     return '-' if promotion_codes.blank?
 
-    result = ""
+    result = ''
 
     promotion_codes.each do |promotion_code|
       result += "#{promotion_code.code}, "
@@ -46,6 +46,6 @@ module OrdersHelper
   def display_total_price(order)
     price = OrderPriceCalculatorService.new(order).calculate
 
-    number_to_currency(price, :unit => '€', format: '%n%u')
+    number_to_currency(price, unit: '€', format: '%n%u')
   end
 end

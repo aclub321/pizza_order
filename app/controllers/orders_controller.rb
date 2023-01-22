@@ -11,9 +11,9 @@ class OrdersController < ApplicationController
     order = Order.find(params[:id])
 
     if order.update(complete: true)
-      redirect_to orders_url, notice: "Order was successfully updated."
+      redirect_to orders_url, notice: 'Order was successfully updated.'
     else
-      redirect_to orders_url, notice: "Failed to update order."
+      redirect_to orders_url, notice: 'Failed to update order.'
     end
   end
 end
