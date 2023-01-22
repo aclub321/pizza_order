@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_22_085542) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_22_100930) do
   create_table "orders", force: :cascade do |t|
     t.integer "discount_code", limit: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "pizzas", force: :cascade do |t|
+    t.integer "type", limit: 1
+    t.integer "size", limit: 1
+    t.integer "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_pizzas_on_order_id"
+  end
+
+  add_foreign_key "pizzas", "orders"
 end

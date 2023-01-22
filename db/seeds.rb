@@ -6,5 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Order.create
+order1 = Order.create
+
+Pizza.create(type: :tonno, size: :large, order: order1)
 
