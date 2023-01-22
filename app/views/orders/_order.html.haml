@@ -6,9 +6,11 @@
     %p
       = "Created: #{format_date(order.created_at)}"
     %p
-      Promotions Codes: -
+      Promotions Codes: 
+      = print_promotion_codes(order.promotion_codes)
     %p
-      Discount Codes: -
+      Discount Codes:
+      = print_discount_code(order.discount_code)
     %br
     %p
       Total Price: 10.40€

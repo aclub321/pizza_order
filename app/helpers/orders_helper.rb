@@ -22,4 +22,24 @@ module OrdersHelper
 
     result
   end
+
+  def print_promotion_codes(promotion_codes)
+    return '-' if promotion_codes.blank?
+
+    result = ""
+
+    promotion_codes.each do |promotion_code|
+      result += "#{promotion_code.code}, "
+    end
+
+    result.chomp!(', ') if result.present?
+
+    result
+  end
+
+  def print_discount_code(discount_code)
+    return '-' if discount_code.nil?
+
+    discount_code
+  end
 end
