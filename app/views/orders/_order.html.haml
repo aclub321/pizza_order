@@ -1,4 +1,19 @@
-%div{:id => "#{dom_id order}"}
-  %p
-    %strong Discount code:
-    = order.discount_code
+%hr
+.row{:id => "#{dom_id order}"}
+  .column
+    %p
+      = "ID: #{order.id}"
+    %p
+      = "Created: #{format_date(order.created_at)}"
+    %p
+      Promotions Codes: -
+    %p
+      Discount Codes: -
+    %br
+    %p
+      Total Price: 10.40€
+  .column
+    %p
+      Items:
+    %ul.square 
+      %li Tonno (Large)  

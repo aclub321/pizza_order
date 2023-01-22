@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+ul.circle {
+  list-style-type: circle;
+}
+
+ul.square {
+  list-style-type: square;
+}
