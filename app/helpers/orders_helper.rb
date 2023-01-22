@@ -42,4 +42,10 @@ module OrdersHelper
 
     discount_code
   end
+
+  def display_total_price(order)
+    price = OrderPriceCalculatorService.new(order).calculate
+
+    number_to_currency(price, :unit => '€', format: '%n%u')
+  end
 end

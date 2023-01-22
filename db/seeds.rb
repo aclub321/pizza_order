@@ -25,7 +25,7 @@ PizzaIngredient.create(state: :add, ingredient: olive, pizza: order2_pizza1)
 PizzaIngredient.create(state: :remove, ingredient: onion, pizza: order2_pizza2)
 PizzaIngredient.create(state: :remove, ingredient: olive, pizza: order2_pizza2)
 
-order3 = Order.create(discount_code: :SAVES)
+order3 = Order.create(discount_code: :SAVE5)
 PromotionCode.create(code: '2FOR1', order: order3)
 order3_pizza1 = Pizza.create(pizza_type: :Salami, pizza_size: :Medium, order: order3)
 _order3_pizza2 = Pizza.create(pizza_type: :Salami, pizza_size: :Small, order: order3)

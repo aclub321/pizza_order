@@ -13,7 +13,7 @@
       = print_discount_code(order.discount_code)
     %br
     %p
-      Total Price: 10.40€
+      = "Total Price: #{display_total_price(order)}"
 
     = button_to 'Complete', order_path(order), method: :patch
   .column
